@@ -1,0 +1,31 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+out
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Database (local SQLite; migrations and schema.prisma stay tracked)
+prisma/*.db
+prisma/*.db-journal
+
+# Generated Prisma client
+src/main/generated
+
+# Logs
+*.log*
+logs
+
+# Caches
+.eslintcache
+.vite
+coverage
+
+# OS files
+.DS_Store
+Thumbs.db

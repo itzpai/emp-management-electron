@@ -1,0 +1,28 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/main/generated/prisma"
+}
+
+model Employee {
+  id         Int      @id @default(autoincrement())
+  name       String
+  position   String
+  department String
+  phone      String?
+  joinedDate String
+  salary     Float
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model AppSetting {
+  id           Int     @id @default(autoincrement())
+  isLocked     Boolean @default(false)
+  passwordHash String
+  passwordSalt String
+}
